@@ -49,14 +49,15 @@ color:white;
 text-shadow:0 0 15px #b000ff;
 font-weight:900;
 }
+
 .logo{
-font-size:28px;
-font-weight:bold;
-color:#ffd700;
-margin-bottom:15px;
-text-shadow:0 0 10px #ff0000;
-  }
-background: linear-gradient(135deg,#16002b,#8a2be2,#d100ff);
+...
+animation:flotar 3s infinite ease-in-out;
+}
+
+@keyframes flotar{
+...
+    }
 
 .banner h2{
 font-size:30px;
@@ -107,6 +108,22 @@ text-shadow:0 0 15px #b000ff;
     }
 .logo{
 width:130px;
+height:130px;
+object-fit:contain;
+filter:drop-shadow(0 0 20px #b000ff);
+animation:flotar 3s infinite ease-in-out;
+}
+
+@keyframes flotar{
+0%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+100%{
+transform:translateY(0);
+}
     }
 </style>
 
