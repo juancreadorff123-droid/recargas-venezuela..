@@ -79,13 +79,47 @@ padding:30px;
 }
 
 .card{
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(12px);
-border:1px solid rgba(200,100,255,0.4);
+background:rgba(20,10,40,0.75);
+border:2px solid rgba(180,80,255,0.5);
 padding:20px;
-border-radius:20px;
-box-shadow:0 0 25px rgba(150,0,255,0.35);
+border-radius:25px;
+text-align:center;
+position:relative;
+overflow:hidden;
+box-shadow:0 0 20px rgba(180,0,255,0.35);
 transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 35px rgba(200,0,255,0.8);
+}
+
+
+.diamante{
+font-size:35px;
+}
+
+
+.bono{
+color:#00ff99;
+font-weight:bold;
+}
+
+
+.etiqueta{
+position:absolute;
+top:10px;
+right:10px;
+background:#ff8c00;
+padding:5px 12px;
+border-radius:20px;
+font-weight:bold;
+}
+
+
+.oferta{
+border:2px solid #ff9800;
 }
 
 .card:hover{
