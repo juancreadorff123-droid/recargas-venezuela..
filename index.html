@@ -26,16 +26,18 @@ text-align:center;
 box-shadow:0 0 25px rgba(180,0,255,0.6);
 }
 .btn{
-background:linear-gradient(90deg,#8a2be2,#d100ff);
+background:linear-gradient(90deg,#8a2be2,#d000ff);
 color:white;
-padding:15px 30px;
-border-radius:15px;
+padding:14px 25px;
+border-radius:25px;
 text-decoration:none;
 display:inline-block;
 margin-top:20px;
-font-weight:bold;
-box-shadow:0 0 20px rgba(200,0,255,0.8);
+font-weight:900;
+font-size:17px;
+box-shadow:0 0 25px rgba(220,0,255,0.8);
 transition:0.3s;
+border:1px solid rgba(255,255,255,0.3);
 }
 
 .btn:hover{
@@ -71,11 +73,10 @@ box-shadow:0 0 30px rgba(220,0,255,1);
 }
 
 .productos{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-padding:30px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+padding:20px;
 }
 
 .card{
@@ -128,18 +129,20 @@ box-shadow:0 0 35px rgba(200,0,255,0.7);
     }
 
 .card h3{
-color:white;
-font-size:24px;
+color:#ffffff;
+font-size:26px;
 font-weight:900;
-text-shadow:0 0 12px #b000ff;
-}
+margin:12px 0;
+text-shadow:0 0 15px #8a2be2;
+    }
 
 .precio{
-font-size:28px;
-color:#ffffff;
+font-size:32px;
+color:#00ff99;
 font-weight:900;
-text-shadow:0 0 15px #b000ff;
-    }
+text-shadow:0 0 15px #00ff99;
+margin:10px 0;
+}
 .logo{
 width:130px;
 height:130px;
