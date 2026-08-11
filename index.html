@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Recargas Venezuela | Free Fire</title>
+.fondo-animado{
 
 <style>
 
@@ -272,7 +273,35 @@ transform:translateY(-8px);
 transform:translateY(0);
 }
     }
-</style>
+</style>.fondo-animado{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+background:linear-gradient(120deg,#08000f,#24003d,#08000f);
+background-size:200% 200%;
+animation:fondo 8s infinite alternate;
+}
+
+@keyframes fondo{
+
+0%{
+background-position:left;
+}
+
+100%{
+background-position:right;
+}
+
+}
+    
+
+    
+
+
+
 
 </head>
 
