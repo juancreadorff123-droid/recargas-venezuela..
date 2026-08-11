@@ -3,16 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recargas Venezuela | Tu Plataforma de Recargas</title>
-
-  <!-- Fuentes -->
-  <link href="https://googleapis.com" rel="stylesheet">
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="site.webmanifest">
+  <title>Recargas Venezuela</title>
 
   <style>
     body {
@@ -40,35 +31,125 @@
         0 0 35px rgba(37,99,235,0.7);
     }
 
-    /* TITULO ID DEL JUGADOR - COMBINADO */
+    /* TITULO ID DEL JUGADOR */
     .titulo-id {
       text-align: center;
       font-size: 22px;
-      font-weight: 600;
+      font-weight: bold;
       margin-bottom: 15px;
-      background: linear-gradient(90deg, #e0f2fe, #ede9fe);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #60a5fa;
       text-shadow: 0 0 8px #3b82f6, 0 0 15px #1d4ed8;
     }
 
-    /* ====== ANIMACIÓN DE CARGA ====== */
-    .barraCarga {
-      width: 200px;
-      height: 10px;
-      background: #201942;
+    /* CONTENEDOR PRINCIPAL */
+    .container { 
+      max-width: 520px; 
+      margin: auto; 
+      padding: 15px; 
+    }
+
+    /* ESTADO DEL SERVICIO */
+    .estado-servicio { 
+      text-align: center; 
+      background: #0f2f1f; 
+      color: #22c55e; 
+      padding: 10px; 
+      font-size: 14px; 
+      border-bottom: 1px solid #22c55e; 
+    }
+
+    /* TARJETAS CONTENEDORAS */
+    .card {
+      background: #151126cc;
+      border: 1px solid #2563eb;
+      padding: 22px;
+      margin-top: 20px;
+      border-radius: 14px;
+      color: white;
+      box-shadow: 0 0 15px rgba(37,99,235,0.3);
+      transition: all 0.3s ease;
+    }
+
+    /* INPUTS */
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 2px solid #3b82f6;
+      border-radius: 6px;
+      background: rgba(19, 15, 38, 0.8);
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      box-sizing: border-box;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    }
+
+    /* BOTONES */
+    button {
+      padding: 10px;
+      border: none;
       border-radius: 5px;
-      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* CUADRICULA DE PAQUETES */
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 10px; 
+      margin-top: 15px;
+    }
+
+    /* 🔵 DIAL DE OPCIONES (DIAMANTES) */
+    .opcion {
+      background: #0b1220;
+      border: 1px solid #1e3a8a;
+      border-radius: 16px;
+      padding: 18px;
+      text-align: center;
+      cursor: pointer;
+      color: #60a5fa;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .opcion:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+      transform: translateY(-2px);
     }
   </style>
 </head>
 <body>
 
-  <h1 id="xenox-title">RECARGAS VENEZUELA</h1>
-  <div class="titulo-id">INGRESA TU ID DE JUGADOR</div>
-  <div style="text-align: center; margin-top: 20px;">
-    <input type="text" placeholder="Ej: 12345678" style="padding: 10px; border-radius: 5px; border: 1px solid #3b82f6; background: #130f26; color: white; text-align: center; font-size: 16px;">
+  <!-- Barra de estado del servicio superior -->
+  <div class="estado-servicio">🟢 SERVICIO DE RECARGAS ACTIVO</div>
+
+  <div class="container">
+    
+    <h1 id="xenox-title">RECARGAS VENEZUELA</h1>
+    
+    <!-- Tarjeta principal para ingresar datos -->
+    <div class="card">
+      <div class="titulo-id">INGRESA TU ID DE JUGADOR</div>
+      <input type="text" placeholder="Ej: 12345678">
+    </div>
+
+    <!-- Tarjeta para la selección de diamantes -->
+    <div class="card">
+      <div class="titulo-id" style="font-size: 18px;">SELECCIONA LA CANTIDAD</div>
+      
+      <div class="grid">
+        <div class="opcion">💎 100 <br> Diamantes</div>
+        <div class="opcion">💎 310 <br> Diamantes</div>
+        <div class="opcion">💎 520 <br> Diamantes</div>
+        <div class="opcion">💎 1060 <br> Diamantes</div>
+      </div>
+    </div>
+
   </div>
-  
+
 </body>
-</html>
+  </html>
+
