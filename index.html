@@ -974,7 +974,19 @@ body{
           VERIFICAR ID
         </button>
       </div>
+<div id="verificando" style="display:none; text-align:center; margin-top:20px;">
 
+    <div style="font-size:60px;">
+        💎
+    </div>
+
+    <h2 style="color:#60a5fa;">
+        VERIFICANDO ID
+    </h2>
+
+    <div class="barraCarga"></div>
+
+</div>
       <!-- PASO 2: Seleccionar Diamantes (Oculto al inicio) -->
       <div id="seccion-diamantes" style="display:none;">
         <p style="color: #60a5fa; font-weight: bold; margin-bottom: 15px;">SELECCIONA LA CANTIDAD DE DIAMANTES:</p>
@@ -997,23 +1009,30 @@ body{
     </div>
     </div>
     <script>
-  const btn = document
-    .getElementById('btn-siguiente');
-  btn.onclick = function() {
-    const id = document
-      .getElementById('input-id')
-      .value.trim();
+  const btn = document.getElementById('btn-siguiente');
+
+btn.onclick = function() {
+
+    const id = document.getElementById('input-id').value.trim();
+
     if (id === "") {
-      alert("Ingresa tu ID primero.");
-      return;
+        alert("Ingresa tu ID primero.");
+        return;
     }
-    document
-      .getElementById('seccion-id')
-      .style.display = 'none';
-    document
-      .getElementById('seccion-diamantes')
-      .style.display = 'block';
-  };
+
+    document.getElementById('seccion-id').style.display = 'none';
+
+    document.getElementById('verificando').style.display = 'block';
+
+    setTimeout(function(){
+
+        document.getElementById('verificando').style.display = 'none';
+
+        document.getElementById('seccion-diamantes').style.display = 'block';
+
+    },3000);
+
+};
     </script>
   
 </body>
