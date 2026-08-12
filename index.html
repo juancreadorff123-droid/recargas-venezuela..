@@ -317,7 +317,232 @@ font-size:20px;
 
 }
 
+/* ==================================
+   RECARGAS VENEZUELA - MEJORAS VISUALES
+================================== */
 
+
+/* Logo mejorado */
+
+.logo{
+
+font-size:24px;
+font-weight:900;
+letter-spacing:1px;
+color:#ffffff;
+text-shadow:
+0 0 8px #7c35ff,
+0 0 20px #7c35ff;
+
+}
+
+
+
+/* Fondo gamer neon */
+
+.banner{
+
+min-height:330px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+background:
+linear-gradient(
+135deg,
+rgba(20,10,45,.95),
+rgba(70,20,120,.75)
+),
+url("https://images.unsplash.com/photo-1511512578047-dfb367046420");
+
+background-size:cover;
+background-position:center;
+
+}
+
+
+
+/* Titulos */
+
+.banner h1{
+
+font-size:42px;
+line-height:1.1;
+
+}
+
+
+.banner span{
+
+color:#a743ff;
+
+}
+
+
+
+/* Tarjetas con brillo */
+
+.card{
+
+backdrop-filter:blur(8px);
+
+box-shadow:
+
+0 0 15px rgba(120,50,255,.25),
+inset 0 0 20px rgba(255,255,255,.03);
+
+}
+
+
+
+/* Caja ID */
+
+.input-box input{
+
+border:2px solid #774b20;
+
+height:70px;
+
+}
+
+
+
+.diamond-btn{
+
+height:70px;
+margin-right:10px;
+
+box-shadow:
+
+0 0 20px #00cfff;
+
+}
+
+
+
+/* Jugador */
+
+.player{
+
+animation:pulse 2s infinite;
+
+}
+
+
+
+@keyframes pulse{
+
+0%{
+
+box-shadow:0 0 5px #39ff7b;
+
+}
+
+50%{
+
+box-shadow:0 0 30px #39ff7b;
+
+}
+
+100%{
+
+box-shadow:0 0 5px #39ff7b;
+
+}
+
+}
+
+
+
+/* Paquetes */
+
+.package{
+
+cursor:pointer;
+
+background:
+
+linear-gradient(
+145deg,
+#1c2740,
+#101522
+);
+
+}
+
+
+
+.package h2{
+
+font-size:32px;
+
+text-shadow:
+
+0 0 15px #00d9ff;
+
+}
+
+
+
+.offer{
+
+box-shadow:
+
+0 0 15px #ff7200;
+
+}
+
+
+
+/* botones flotantes */
+
+.buttons{
+
+z-index:10;
+
+}
+
+
+.btn{
+
+box-shadow:
+
+0 0 20px rgba(0,0,0,.5);
+
+}
+
+
+
+/* móvil */
+
+@media(max-width:600px){
+
+
+.banner h1{
+
+font-size:34px;
+
+}
+
+
+.buttons{
+
+bottom:15px;
+left:15px;
+right:15px;
+
+}
+
+
+.btn{
+
+font-size:14px;
+padding:12px;
+
+}
+
+
+    }
 </style>
 
 </head>
