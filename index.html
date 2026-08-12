@@ -46,14 +46,14 @@
             opacity: 0.8;
         }
 
-        /* CONTENEDOR PRINCIPAL */
+        /* CONTENEDOR PRINCIPAL TRANSLÚCIDO OSCURO */
         .card-panel {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.75);
             border: 2px solid rgba(249, 115, 22, 0.4);
             border-radius: 24px;
             width: 92%;
-            max-width: 360px; /* Ajustado para que quepa bien en pantallas delgadas */
-            padding: 24px 16px;
+            max-width: 380px;
+            padding: 24px 20px;
             box-sizing: border-box;
             margin-top: 30px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
@@ -73,52 +73,45 @@
             gap: 8px;
         }
 
-        /* CONTENEDOR DE BÚSQUEDA CORREGIDO */
         .search-container {
             display: flex;
-            width: 100%;
-            gap: 8px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
-        /* CAMPO ENTRADA DE ID SE ADAPTA AL ESPACIO RESTANTE */
+        /* CAMPO ENTRADA DE ID */
         .input-id {
             flex: 1;
-            min-width: 0; /* Evita que el input empuje al botón fuera de la pantalla */
             background: rgba(30, 41, 59, 0.7);
             border: 1.5px solid rgba(249, 115, 22, 0.3);
             border-radius: 14px;
-            padding: 16px 12px;
+            padding: 16px;
             color: #f1f5f9;
-            font-size: 16px;
+            font-size: 18px;
             outline: none;
-            box-sizing: border-box;
         }
 
         .input-id::placeholder {
             color: #94a3b8;
         }
 
-        /* BOTÓN AZUL CIAN RECONSTRUIDO DENTRO DE LA CAJA */
+        /* BOTÓN AZUL CIAN CON DIAMANTE SVG SEGURO */
         .btn-search {
             background: linear-gradient(135deg, #0ea5e9, #0284c7);
             border: none;
             border-radius: 14px;
-            width: 58px;
-            height: 54px;
-            flex-shrink: 0; /* Evita que el botón se deforme o achique */
+            width: 62px;
+            height: 58px;
             cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
             box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
-            box-sizing: border-box;
         }
 
         .btn-search svg {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             fill: white;
         }
 
@@ -126,7 +119,7 @@
             font-size: 12px;
             color: #64748b;
             text-align: center;
-            margin: 0 0 20px 0;
+            margin: -10px 0 20px 0;
         }
 
         /* ÚLTIMO ID GUARDADO */
@@ -210,10 +203,10 @@
 
         /* TARJETA DE FREE FIRE CORREGIDA */
         .game-card {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.75);
             border-radius: 20px;
             width: 92%;
-            max-width: 360px;
+            max-width: 380px;
             padding: 14px 18px;
             box-sizing: border-box;
             display: flex;
@@ -228,23 +221,22 @@
             gap: 14px;
         }
 
-        /* Icono de Free Fire */
+        /* Miniatura fallback premium para Free Fire */
         .game-icon-ff {
             width: 48px;
             height: 48px;
             border-radius: 12px;
-            background: #1e293b;
+            background: linear-gradient(135deg, #f97316, #ea580c);
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.2);
-            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.4);
         }
 
-        .game-icon-ff img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .game-icon-ff svg {
+            width: 26px;
+            height: 26px;
+            fill: white;
         }
 
         .game-title-text {
@@ -320,7 +312,7 @@
         
         <div class="search-container">
             <input type="text" id="userId" class="input-id" placeholder="Ingresa tu ID">
-            <!-- Botón del Diamante completamente integrado mediante Flexbox -->
+            <!-- Botón con diamante en formato SVG Nativo Seguro -->
             <button class="btn-search" onclick="verificarID()">
                 <svg viewBox="0 0 24 24"><path d="M12 2L2 9l10 13 10-13L12 2zm0 3.56L18.44 10H5.56L12 5.56z"/></svg>
             </button>
@@ -339,4 +331,12 @@
 
         <!-- BOTÓN HISTORIAL -->
         <button class="btn-history">
-                
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            Historial
+        </button>
+    </div>
+
+    <!-- SECCIÓN OTROS JUEGOS -->
+    <p class="games-section-title">OTROS JUEGOS</p>
+
+    <!-- TARJETA INDEPENDIENTE DE FREE FIRE (Actualizado) -->
