@@ -814,9 +814,16 @@ body{
   100%{ transform: scale(1); opacity:1; }
 }
 body {
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  transition: opacity 0.35s ease;
   opacity: 1 !important;
 }
+
+/* Esto obligará a mostrar cualquier contenedor oculto */
+body * {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+  
   
   
   
