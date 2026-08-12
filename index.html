@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recargas Express FF</title>
-    <!-- Iconos de FontAwesome estables -->
-    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         body {
             margin: 0;
@@ -19,10 +17,10 @@
             align-items: center;
             min-height: 100vh;
             box-sizing: border-box;
-            padding-bottom: 120px;
+            padding-bottom: 140px;
         }
 
-        /* HEADER SUPERIOR IDÉNTICO */
+        /* HEADER SUPERIOR */
         .header-nexus {
             width: 100%;
             background: #0d0f14;
@@ -61,7 +59,6 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
         }
 
-        /* TÍTULO SECCIÓN CON ICONO GAMER */
         .section-title {
             font-size: 14px;
             font-weight: bold;
@@ -72,6 +69,7 @@
             text-transform: uppercase;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
         }
 
@@ -97,20 +95,24 @@
             color: #94a3b8;
         }
 
-        /* BOTÓN AZUL CIAN CON EL DIAMANTE REPLICADO */
+        /* BOTÓN AZUL CIAN CON DIAMANTE SVG SEGURO */
         .btn-search {
             background: linear-gradient(135deg, #0ea5e9, #0284c7);
             border: none;
             border-radius: 14px;
             width: 62px;
             height: 58px;
-            color: white;
-            font-size: 22px;
             cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
             box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+        }
+
+        .btn-search svg {
+            width: 26px;
+            height: 26px;
+            fill: white;
         }
 
         .example-text {
@@ -120,7 +122,7 @@
             margin: -10px 0 20px 0;
         }
 
-        /* NUEVA ZONA: ÚLTIMO ID GUARDADO */
+        /* ÚLTIMO ID GUARDADO */
         .last-id-container {
             display: flex;
             align-items: center;
@@ -149,18 +151,22 @@
         .btn-return {
             background: #ea580c;
             border: none;
-            color: white;
             width: 36px;
             height: 34px;
             border-radius: 8px;
-            font-size: 16px;
             cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* BOTÓN HISTORIAL ESTILIZADO CON BORDE AZUL */
+        .btn-return svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        /* BOTÓN HISTORIAL */
         .btn-history {
             display: flex;
             justify-content: center;
@@ -177,8 +183,10 @@
             font-weight: bold;
         }
 
-        .btn-history i {
-            color: #38bdf8;
+        .btn-history svg {
+            width: 18px;
+            height: 18px;
+            fill: #38bdf8;
         }
 
         /* TEXTO FLOTANTE DE OTROS JUEGOS */
@@ -193,7 +201,7 @@
             text-transform: uppercase;
         }
 
-        /* FILA DEL JUEGO BLOOD STRIKE */
+        /* TARJETA DE FREE FIRE CORREGIDA */
         .game-card {
             background: rgba(15, 23, 42, 0.75);
             border-radius: 20px;
@@ -213,12 +221,22 @@
             gap: 14px;
         }
 
-        .game-img {
+        /* Miniatura fallback premium para Free Fire */
+        .game-icon-ff {
             width: 48px;
             height: 48px;
             border-radius: 12px;
-            object-fit: cover;
-            border: 1px solid rgba(255,255,255,0.1);
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.4);
+        }
+
+        .game-icon-ff svg {
+            width: 26px;
+            height: 26px;
+            fill: white;
         }
 
         .game-title-text {
@@ -228,8 +246,9 @@
         }
 
         .badge-available {
-            background: #047857;
+            background: rgba(16, 185, 129, 0.15);
             color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.4);
             padding: 5px 12px;
             border-radius: 8px;
             font-size: 11px;
@@ -261,6 +280,12 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.4);
         }
 
+        .action-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
         .btn-tutorial {
             background: #ea580c;
         }
@@ -280,57 +305,39 @@
 
     <!-- PANEL DEL ID JUGADOR -->
     <div class="card-panel">
-        <p class="section-title"><i class="fa-solid fa-user-shield"></i> ID DEL JUGADOR</p>
+        <p class="section-title">
+            <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:#f97316; margin-right:6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            ID DEL JUGADOR
+        </p>
         
         <div class="search-container">
             <input type="text" id="userId" class="input-id" placeholder="Ingresa tu ID">
-            <!-- Botón con el icono de diamante como el original -->
+            <!-- Botón con diamante en formato SVG Nativo Seguro -->
             <button class="btn-search" onclick="verificarID()">
-                <i class="fa-solid fa-gem"></i>
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 9l10 13 10-13L12 2zm0 3.56L18.44 10H5.56L12 5.56z"/></svg>
             </button>
         </div>
         
         <p class="example-text">Ejemplo: 6068831320</p>
 
-        <!-- PANEL DE ÚLTIMO ID IMPLEMENTADO -->
+        <!-- PANEL DE ÚLTIMO ID -->
         <div class="last-id-container">
             <span class="last-id-label">Último ID:</span>
             <span class="last-id-number" id="displayLastId">14967278843</span>
-            <button class="btn-return" onclick="cargarUltimoID()"><i class="fa-solid fa-reply"></i></button>
+            <button class="btn-return" onclick="cargarUltimoID()">
+                <svg viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg>
+            </button>
         </div>
 
-        <!-- BOTÓN HISTORIAL CON ICONO PLANETARIO -->
+        <!-- BOTÓN HISTORIAL -->
         <button class="btn-history">
-            <i class="fa-solid fa-globe"></i> Historial
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            Historial
         </button>
     </div>
 
-    <!-- SECCIÓN OTROS JUEGOS FLOTANTE -->
+    <!-- SECCIÓN OTROS JUEGOS -->
     <p class="games-section-title">OTROS JUEGOS</p>
 
-    <!-- TARJETA INDEPENDIENTE DE BLOOD STRIKE -->
-    <div class="game-card">
-        <div class="game-details">
-            <!-- Miniatura real optimizada para Blood Strike -->
-            <img src="https://unsplash.com" alt="Blood Strike" class="game-img">
-            <span class="game-title-text">Blood Strike</span>
-        </div>
-        <span class="badge-available">DISPONIBLE</span>
-    </div>
-
-    <!-- BOTONES COMPACTOS DE SOPORTE E INFORMACIÓN -->
-    <div class="action-buttons-container">
-        <a href="#" class="action-btn btn-tutorial"><i class="fa-solid fa-book"></i> Tutorial</a>
-        <a href="#" class="action-btn btn-support"><i class="fa-brands fa-whatsapp"></i> Soporte</a>
-    </div>
-
-    <script>
-        function verificarID() {
-            var idInput = document.getElementById('userId').value;
-            if(idInput.trim() === "") {
-                alert("Por favor, ingresa un ID válido.");
-                return;
-            }
-            // Guarda el ID como último consultado de forma dinámica
-            document.getElementById('displayLastId').innerText = idInput;
+    <!-- TARJETA INDEPENDIENTE DE FREE FIRE (Actualizado) -->
     
