@@ -26,7 +26,7 @@
         /* HEADER ESTILO NEXUS REPRODUCIDO EXACTAMENTE */
         .header-nexus {
             width: 100vw;
-            background: rgba(0, 0, 0, 0.9);
+            background: #090e1a; /* Fondo sólido oscuro para asegurar compatibilidad */
             padding: 20px 15px;
             text-align: center;
             box-sizing: border-box;
@@ -58,20 +58,17 @@
             letter-spacing: 0.2px;
         }
 
-        /* CONTENEDOR ESTILO PREMIUM GAMER CON CURVAS PRONUNCIADAS */
+        /* CONTENEDOR OPTIMIZADO (Sin el filtro que lo volvía invisible) */
         .card-panel {
-            background: rgba(8, 14, 30, 0.55); /* Súper translúcido */
-            backdrop-filter: blur(16px) saturate(120%);
-            -webkit-backdrop-filter: blur(16px) saturate(120%);
-            border: 2px solid rgba(255, 122, 0, 0.7); /* Borde neón suavizado */
-            border-radius: 32px; /* Esquinas muy redondeadas idénticas a la foto */
+            background: rgba(5, 8, 20, 0.88); /* Fondo sólido semi-oscuro para que resalte y no falle */
+            border: 2px solid #ff7a00; /* Borde neón bien definido */
+            border-radius: 32px; /* Esquinas muy redondeadas premium */
             width: 100%;
             max-width: 380px;
             padding: 30px 24px;
             box-sizing: border-box;
             margin-bottom: 25px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 
-                        inset 0 0 15px rgba(255, 122, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
         }
 
         /* TEXTO DE SECCIÓN REDISEÑADO */
@@ -84,10 +81,6 @@
             margin-top: 0;
             margin-bottom: 25px;
             text-transform: uppercase;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
         }
 
         .search-container {
@@ -100,30 +93,29 @@
         /* INPUT REDONDEADO Y OSCURO */
         .input-id {
             flex: 1;
-            background: rgba(5, 8, 20, 0.85);
-            border: 2px solid rgba(255, 122, 0, 0.4);
-            border-radius: 18px; /* Mayor curvatura */
+            background: #000000;
+            border: 2px solid rgba(255, 122, 0, 0.5);
+            border-radius: 18px;
             padding: 16px;
             color: white;
             font-size: 16px;
             outline: none;
-            transition: all 0.3s ease;
+            box-sizing: border-box;
         }
 
         .input-id:focus {
             border-color: #ff7a00;
-            box-shadow: 0 0 10px rgba(255, 122, 0, 0.3);
         }
 
         .input-id::placeholder {
             color: #4b5563;
         }
 
-        /* BOTÓN DE BÚSQUEDA REDONDEADO CON ICONO CORREGIDO */
+        /* BOTÓN DE BÚSQUEDA REDONDEADO */
         .btn-search {
             background: linear-gradient(135deg, #ff9500, #ff5500);
             border: none;
-            border-radius: 18px; /* Igual curvatura que el input */
+            border-radius: 18px;
             width: 60px;
             height: 56px;
             color: white;
@@ -132,12 +124,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: all 0.2s ease;
             box-shadow: 0 4px 15px rgba(255, 85, 0, 0.4);
-        }
-
-        .btn-search:active {
-            transform: scale(0.95);
         }
 
         .example-text {
@@ -148,7 +135,7 @@
             font-weight: 500;
         }
 
-        /* BOTÓN HISTORIAL IDÉNTICO AL ORIGINAL */
+        /* BOTÓN HISTORIAL */
         .btn-history {
             display: flex;
             justify-content: center;
@@ -163,11 +150,6 @@
             font-size: 16px;
             cursor: pointer;
             font-weight: 700;
-            transition: all 0.3s ease;
-        }
-
-        .btn-history:hover {
-            background: rgba(255, 122, 0, 0.1);
         }
 
         /* PANEL DE CARGA VERIFICANDO ID */
@@ -206,7 +188,7 @@
         .progress-bar-container {
             width: 80%;
             height: 6px;
-            background: rgba(5, 8, 20, 0.9);
+            background: #000000;
             border-radius: 10px;
             margin: 0 auto;
             overflow: hidden;
@@ -224,8 +206,7 @@
 
         /* SECCIÓN OTROS JUEGOS */
         .card-panel-games {
-            background: rgba(8, 14, 30, 0.55);
-            backdrop-filter: blur(16px);
+            background: rgba(5, 8, 20, 0.88);
             border: 2px solid rgba(255, 122, 0, 0.5);
             border-radius: 32px;
             width: 100%;
@@ -250,7 +231,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(5, 8, 20, 0.6);
+            background: #000000;
             padding: 14px 18px;
             border-radius: 20px;
             border: 1px solid rgba(255, 122, 0, 0.1);
@@ -289,12 +270,11 @@
             font-weight: 800;
         }
 
-        /* BOTÓN DE WHATSAPP FLOTANTE DISCRETO */
+        /* BOTÓN DE WHATSAPP FLOTANTE */
         .whatsapp-footer {
             position: fixed;
             bottom: 25px;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(8px);
+            background: #090e1a;
             padding: 14px 28px;
             border-radius: 50px;
             display: flex;
@@ -331,4 +311,26 @@
     <!-- ENCABEZADO SUPERIOR CON ADVERTENCIA LEGAL -->
     <div class="header-nexus">
         <h1>Recargas Express FF</h1>
+        <p class="legal-text">Revendedor independiente • No afiliado a Garena, Moonton, Tencent ni miHoYo • Marcas © de sus dueños</p>
+    </div>
+
+    <!-- PANEL ID CON MÁXIMA COMPATIBILIDAD GRÁFICA -->
+    <div class="card-panel">
+        <p class="section-title"><i class="fa-solid fa-user-ninja"></i> ID DEL JUGADOR</p>
+        
+        <div class="search-container">
+            <input type="text" id="userId" class="input-id" placeholder="Ingresa tu ID">
+            <button class="btn-search" onclick="verificarID()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        
+        <p class="example-text">Ejemplo: 6068831320</p>
+
+        <button class="btn-history">
+            <i class="fa-solid fa-clock-rotate-left"></i> Historial
+        </button>
+    </div>
+
+    <!-- PANEL DE CARGA VERIFICANDO ID -->
     
