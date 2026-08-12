@@ -541,7 +541,147 @@ padding:12px;
 
 }
 
+/* ==================================
+   PARTE 4 - AJUSTES MOVIL
+================================== */
 
+
+/* Botón diamante separado del borde */
+
+.diamond-btn{
+
+margin-right:15px;
+margin-left:5px;
+min-width:75px;
+
+border-radius:18px;
+
+}
+
+
+/* Caja del input completa */
+
+.input-box{
+
+padding-right:5px;
+
+align-items:center;
+
+}
+
+
+
+/* Botones inferiores mejorados */
+
+.buttons{
+
+position:fixed;
+
+bottom:25px;
+
+left:15px;
+
+right:15px;
+
+gap:10px;
+
+}
+
+
+
+.btn{
+
+border-radius:25px;
+
+font-size:14px;
+
+padding:12px 8px;
+
+opacity:.95;
+
+}
+
+
+
+/* Evitar que tapen tarjetas */
+
+.card{
+
+margin-bottom:80px;
+
+}
+
+
+
+/* Mejor espacio móvil */
+
+@media(max-width:600px){
+
+
+.banner{
+
+margin:15px;
+
+min-height:280px;
+
+}
+
+
+.banner h1{
+
+font-size:32px;
+
+}
+
+
+.card{
+
+margin:15px;
+
+padding:18px;
+
+}
+
+
+
+.input-box input{
+
+font-size:16px;
+
+}
+
+
+
+.diamond-btn{
+
+width:70px;
+
+height:70px;
+
+font-size:25px;
+
+}
+
+
+}
+
+
+/* Brillo botón diamante */
+
+.diamond-btn:hover{
+
+transform:scale(1.05);
+
+}
+
+
+/* animación suave */
+
+button{
+
+transition:.3s;
+
+    }
     }
 </style>
 
