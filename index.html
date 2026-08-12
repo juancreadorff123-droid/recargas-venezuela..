@@ -1,342 +1,752 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recargas Express FF</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: url('fondo.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-            padding-bottom: 140px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* HEADER SUPERIOR */
-        .header-nexus {
-            width: 100%;
-            background: #0d0f14;
-            padding: 18px 12px;
-            text-align: center;
-            box-sizing: border-box;
-            border-bottom: 2px solid #ea580c;
-        }
+<title>Recargas Venezuela</title>
 
-        .header-nexus h1 {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 0 6px 0;
-            color: #f97316;
-            letter-spacing: 0.5px;
-        }
+<style>
 
-        .legal-text {
-            font-size: 10.5px;
-            color: #e2e8f0;
-            margin: 0;
-            line-height: 1.4;
-            opacity: 0.8;
-        }
+*{
+    box-sizing:border-box;
+    font-family: 'Arial', sans-serif;
+}
 
-        /* CONTENEDOR PRINCIPAL TRANSLÚCIDO OSCURO */
-        .card-panel {
-            background: rgba(15, 23, 42, 0.75);
-            border: 2px solid rgba(249, 115, 22, 0.4);
-            border-radius: 24px;
-            width: 92%;
-            max-width: 380px;
-            padding: 24px 20px;
-            box-sizing: border-box;
-            margin-top: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
-        }
+body{
+    margin:0;
+    background:#080b18;
+    color:white;
+    overflow-x:hidden;
+}
 
-        .section-title {
-            font-size: 14px;
-            font-weight: bold;
-            color: #f97316;
-            letter-spacing: 1px;
-            margin-top: 0;
-            margin-bottom: 22px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
+/* Fondo */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#35105f,#080b18 50%);
+    z-index:-1;
+}
 
-        .search-container {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 20px;
-        }
 
-        /* CAMPO ENTRADA DE ID */
-        .input-id {
-            flex: 1;
-            background: rgba(30, 41, 59, 0.7);
-            border: 1.5px solid rgba(249, 115, 22, 0.3);
-            border-radius: 14px;
-            padding: 16px;
-            color: #f1f5f9;
-            font-size: 18px;
-            outline: none;
-        }
+/* HEADER */
 
-        .input-id::placeholder {
-            color: #94a3b8;
-        }
+header{
+    height:70px;
+    background:#090d1c;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    border-bottom:1px solid #5420ff;
+}
 
-        /* BOTÓN AZUL CIAN CON DIAMANTE SVG SEGURO */
-        .btn-search {
-            background: linear-gradient(135deg, #0ea5e9, #0284c7);
-            border: none;
-            border-radius: 14px;
-            width: 62px;
-            height: 58px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
-        }
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#7c35ff;
+    text-shadow:0 0 15px #7c35ff;
+}
 
-        .btn-search svg {
-            width: 26px;
-            height: 26px;
-            fill: white;
-        }
 
-        .example-text {
-            font-size: 12px;
-            color: #64748b;
-            text-align: center;
-            margin: -10px 0 20px 0;
-        }
+.menu{
+    background:#7c35ff;
+    padding:12px;
+    border-radius:10px;
+}
 
-        /* ÚLTIMO ID GUARDADO */
-        .last-id-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(15, 23, 42, 0.5);
-            border: 1px solid rgba(249, 115, 22, 0.2);
-            border-radius: 14px;
-            padding: 10px 14px;
-            margin-bottom: 20px;
-        }
 
-        .last-id-label {
-            font-size: 12px;
-            color: #94a3b8;
-            max-width: 60px;
-            line-height: 1.2;
-        }
+/* Banner */
 
-        .last-id-number {
-            font-size: 19px;
-            font-weight: bold;
-            color: #ea580c;
-            letter-spacing: 0.5px;
-        }
+.banner{
+    margin:20px;
+    padding:25px;
+    border-radius:20px;
+    background:
+    linear-gradient(135deg,#12182c,#271052);
+    border:1px solid #713cff;
+    box-shadow:0 0 25px #30106f;
+}
 
-        .btn-return {
-            background: #ea580c;
-            border: none;
-            width: 36px;
-            height: 34px;
-            border-radius: 8px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
 
-        .btn-return svg {
-            width: 18px;
-            height: 18px;
-            fill: white;
-        }
+.banner h1{
+    color:#fff;
+}
 
-        /* BOTÓN HISTORIAL */
-        .btn-history {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-            background: rgba(15, 23, 42, 0.8);
-            border: 1.5px solid #0284c7;
-            border-radius: 14px;
-            color: #f97316;
-            padding: 14px;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+.banner span{
+    color:#9d42ff;
+}
 
-        .btn-history svg {
-            width: 18px;
-            height: 18px;
-            fill: #38bdf8;
-        }
 
-        /* TEXTO FLOTANTE DE OTROS JUEGOS */
-        .games-section-title {
-            text-align: center;
-            font-size: 15px;
-            font-weight: 800;
-            color: #94a3b8;
-            letter-spacing: 3px;
-            margin-top: 35px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
+/* Tarjetas generales */
 
-        /* TARJETA DE FREE FIRE CORREGIDA */
-        .game-card {
-            background: rgba(15, 23, 42, 0.75);
-            border-radius: 20px;
-            width: 92%;
-            max-width: 380px;
-            padding: 14px 18px;
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        }
+.card{
 
-        .game-details {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
+    margin:20px;
+    padding:20px;
+    background:#11182b;
+    border-radius:20px;
+    border:1px solid #43216b;
+    box-shadow:0 0 20px rgba(100,30,255,.3);
 
-        /* Miniatura fallback premium para Free Fire */
-        .game-icon-ff {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #f97316, #ea580c);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.4);
-        }
+}
 
-        .game-icon-ff svg {
-            width: 26px;
-            height: 26px;
-            fill: white;
-        }
 
-        .game-title-text {
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-        }
+/* TITULOS */
 
-        .badge-available {
-            background: rgba(16, 185, 129, 0.15);
-            color: #10b981;
-            border: 1px solid rgba(16, 185, 129, 0.4);
-            padding: 5px 12px;
-            border-radius: 8px;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-        }
+.title{
 
-        /* BOTONES FLOTANTES DE ACCIÓN INFERIOR */
-        .action-buttons-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 100;
-        }
+color:#ff8a00;
+font-size:24px;
+font-weight:bold;
+margin-bottom:20px;
 
-        .action-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 18px;
-            border-radius: 20px;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-            text-decoration: none;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-        }
+}
 
-        .action-btn svg {
-            width: 16px;
-            height: 16px;
-            fill: white;
-        }
 
-        .btn-tutorial {
-            background: #ea580c;
-        }
 
-        .btn-support {
-            background: #10b981;
-        }
-    </style>
+/* INPUT ID */
+
+.input-box{
+
+display:flex;
+gap:10px;
+
+}
+
+
+input{
+
+flex:1;
+padding:20px;
+border-radius:15px;
+border:2px solid #734019;
+background:#080808;
+color:white;
+font-size:18px;
+
+}
+
+
+.diamond-btn{
+
+width:80px;
+border:none;
+border-radius:15px;
+background:#00a9d6;
+font-size:30px;
+
+}
+
+
+/* jugador encontrado */
+
+.player{
+
+margin-top:20px;
+padding:20px;
+border:2px dashed #39ff7b;
+border-radius:20px;
+text-align:center;
+color:#39ff7b;
+
+}
+
+
+
+/* descuentos */
+
+.discount{
+
+margin-top:20px;
+padding:15px;
+border:1px dashed #8c5cff;
+border-radius:15px;
+
+}
+
+.discount input{
+
+width:100%;
+
+}
+
+
+/* paquetes */
+
+
+.packages{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+
+}
+
+
+.package{
+
+padding:20px;
+background:#1b2439;
+border-radius:18px;
+border:2px solid #4c226b;
+text-align:center;
+
+transition:.3s;
+
+}
+
+
+.package:hover{
+
+transform:scale(1.05);
+box-shadow:0 0 20px #7c35ff;
+
+}
+
+
+.package h2{
+
+color:#00cfff;
+
+}
+
+
+.price{
+
+font-size:20px;
+color:white;
+
+}
+
+
+.offer{
+
+background:#ff7200;
+padding:5px 15px;
+border-radius:20px;
+font-size:13px;
+
+}
+
+
+
+/* botones inferiores */
+
+.buttons{
+
+display:flex;
+gap:15px;
+position:fixed;
+bottom:20px;
+left:20px;
+right:20px;
+
+}
+
+
+.btn{
+
+flex:1;
+padding:15px;
+border-radius:30px;
+border:none;
+font-weight:bold;
+font-size:16px;
+
+}
+
+
+.whatsapp{
+
+background:#20c968;
+color:white;
+
+}
+
+
+.tutorial{
+
+background:#146cff;
+color:white;
+
+}
+
+
+/* historial */
+
+.history{
+
+background:#12192b;
+padding:15px;
+border-radius:15px;
+
+}
+
+
+.item{
+
+display:flex;
+justify-content:space-between;
+padding:12px;
+border-bottom:1px solid #333;
+
+}
+
+
+
+/* movil */
+
+@media(max-width:600px){
+
+.packages{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+}
+
+
+</style>
+
 </head>
+
+
 <body>
 
-    <!-- ENCABEZADO CON ADVERTENCIAS LEGALES -->
-    <div class="header-nexus">
-        <h1>Recargas Express FF</h1>
-        <p class="legal-text">Revendedor independiente • No afiliado a Garena, Moonton, Tencent ni miHoYo • Marcas © de sus dueños</p>
-    </div>
 
-    <!-- PANEL DEL ID JUGADOR -->
-    <div class="card-panel">
-        <p class="section-title">
-            <svg viewBox="0 0 24 24" style="width:16px; height:16px; fill:#f97316; margin-right:6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-            ID DEL JUGADOR
-        </p>
-        
-        <div class="search-container">
-            <input type="text" id="userId" class="input-id" placeholder="Ingresa tu ID">
-            <!-- Botón con diamante en formato SVG Nativo Seguro -->
-            <button class="btn-search" onclick="verificarID()">
-                <svg viewBox="0 0 24 24"><path d="M12 2L2 9l10 13 10-13L12 2zm0 3.56L18.44 10H5.56L12 5.56z"/></svg>
-            </button>
-        </div>
-        
-        <p class="example-text">Ejemplo: 6068831320</p>
+<header>
 
-        <!-- PANEL DE ÚLTIMO ID -->
-        <div class="last-id-container">
-            <span class="last-id-label">Último ID:</span>
-            <span class="last-id-number" id="displayLastId">14967278843</span>
-            <button class="btn-return" onclick="cargarUltimoID()">
-                <svg viewBox="0 0 24 24"><path d="M10 9V5l-7 7 7 7v-4.1c5 0 8.5 1.6 11 5.1-1-5-4-10-11-11z"/></svg>
-            </button>
-        </div>
+<div class="logo">
+🐉 RECARGAS VENEZUELA
+</div>
 
-        <!-- BOTÓN HISTORIAL -->
-        <button class="btn-history">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-            Historial
-        </button>
-    </div>
+<div class="menu">
+☰
+</div>
 
-    <!-- SECCIÓN OTROS JUEGOS -->
-    <p class="games-section-title">OTROS JUEGOS</p>
+</header>
 
-    <!-- TARJETA INDEPENDIENTE DE FREE FIRE (Actualizado) -->
+
+
+<section class="banner">
+
+<h1>
+🔥 RECARGA DIAMANTES
+<br>
+<span>
+RÁPIDO Y SEGURO
+</span>
+</h1>
+
+<p>
+La mejor plataforma de recargas gamer
+</p>
+
+</section>
+
+
+
+
+<div class="card">
+
+
+<div class="title">
+🎮 ID DEL JUGADOR
+</div>
+
+
+<div class="input-box">
+
+<input placeholder="Ingresa tu ID">
+
+<button class="diamond-btn">
+💎
+</button>
+
+</div>
+
+
+<p style="text-align:center;color:#899;">
+Ejemplo: 123456789
+</p>
+
+
+
+<div class="player">
+
+✅ JUGADOR ENCONTRADO
+
+<br><br>
+
+Nivel 70 ⭐
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<div class="title">
+💎 SELECCIONA TU RECARGA
+</div>
+
+
+
+<div class="discount">
+
+🎟 Código descuento
+
+<input placeholder="Ingresa código">
+
+</div>
+
+
+
+<br>
+
+
+<div class="packages">
+
+
+<div class="package">
+
+<span class="offer">
+OFERTA
+</span>
+
+<h2>
+💎 110
+</h2>
+
+<p class="price">
+Precio
+</p>
+
+</div>
+
+
+
+
+<div class="package">
+
+<span class="offer">
+COMBO
+</span>
+
+<h2>
+💎 220
+</h2>
+
+<p class="price">
+Precio
+</p>
+
+</div>
+
+
+
+
+<div class="package">
+
+<span class="offer">
+OFERTA
+</span>
+
+<h2>
+💎 341
+</h2>
+
+<p class="price">
+Precio
+</p>
+
+</div>
+
+
+
+<div class="package">
+
+<span class="offer">
+VIP
+</span>
+
+<h2>
+💎 572
+</h2>
+
+<p class="price">
+Precio
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="title">
+🕒 HISTORIAL
+</div>
+
+
+<div class="history">
+
+<div class="item">
+ID 123456789
+<span>
+COMPLETADO
+</span>
+</div>
+
+
+<div class="item">
+💎 220
+<span>
+COMPLETADO
+</span>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<div class="buttons">
+
+<button class="btn whatsapp">
+💬 WhatsApp
+</button>
+
+
+<button class="btn tutorial">
+📺 Tutorial
+</button>
+
+
+</div>
+
+
+
+<script>
+// ================================
+// RECARGAS VENEZUELA - SISTEMA JS
+// ================================
+
+
+// Buscar elementos
+
+const idInput = document.querySelector(".input-box input");
+const playerBox = document.querySelector(".player");
+
+
+// Verificar jugador
+
+idInput.addEventListener("input", function(){
+
+    let id = this.value;
+
+
+    if(id.length >= 8){
+
+        playerBox.innerHTML = `
+        ✅ JUGADOR ENCONTRADO
+        <br><br>
+        👤 Usuario: Venezuela Gamer
+        <br>
+        ⭐ Nivel: 70
+        <br>
+        💎 Listo para recargar
+        `;
+
+        playerBox.style.boxShadow =
+        "0 0 25px #39ff7b";
+
+    }else{
+
+        playerBox.innerHTML = `
+        Esperando ID del jugador...
+        `;
+
+        playerBox.style.boxShadow="none";
+
+    }
+
+
+});
+
+
+
+
+// ================================
+// PAQUETES
+// ================================
+
+
+const paquetes = document.querySelectorAll(".package");
+
+
+paquetes.forEach((paquete)=>{
+
+
+    paquete.addEventListener("click",()=>{
+
+
+        paquetes.forEach(p=>{
+
+            p.style.borderColor="#4c226b";
+
+        });
+
+
+        paquete.style.borderColor="#00ffff";
+
+
+        let diamantes =
+        paquete.querySelector("h2").innerText;
+
+
+
+        alert(
+        "Seleccionaste: "+diamantes+
+        "\n\nContinuar con el pago."
+        );
+
+
+    });
+
+
+});
+
+
+
+
+// ================================
+// CODIGO DESCUENTO
+// ================================
+
+
+const codigo =
+document.querySelector(".discount input");
+
+
+codigo.addEventListener("change",()=>{
+
+
+    if(codigo.value.toUpperCase()=="VENEZUELA"){
+
+
+        codigo.style.borderColor="#39ff7b";
+
+
+        alert(
+        "🎉 Código aplicado correctamente"
+        );
+
+
+    }else{
+
+
+        codigo.style.borderColor="#ff3030";
+
+
+    }
+
+
+});
+
+
+
+
+// ================================
+// BOTONES
+// ================================
+
+
+const botones =
+document.querySelectorAll(".btn");
+
+
+botones[0].onclick=function(){
+
+
+window.open(
+"https://wa.me/",
+"_blank"
+);
+
+
+};
+
+
+
+botones[1].onclick=function(){
+
+
+alert(
+"📺 Tutorial próximamente disponible"
+);
+
+
+};
+
+
+
+
+// ================================
+// ANIMACION TARJETAS
+// ================================
+
+
+document.querySelectorAll(".card")
+.forEach(card=>{
+
+
+card.style.opacity="0";
+
+
+setTimeout(()=>{
+
+
+card.style.transition="1s";
+card.style.opacity="1";
+
+
+},300);
+
+
+
+});
+
+</script>
+
+
+
+</body>
+    </html>
