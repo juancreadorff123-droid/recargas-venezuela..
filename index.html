@@ -680,7 +680,190 @@ transform:scale(1.05);
 button{
 
 transition:.3s;
+/* ==================================
+   PARTE 5 - TARJETAS DIAMANTES
+================================== */
 
+
+.packages{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-top:20px;
+
+}
+
+
+
+.package{
+
+position:relative;
+
+padding:22px 10px;
+
+min-height:170px;
+
+background:
+
+linear-gradient(
+145deg,
+#202b45,
+#101522
+);
+
+
+border:2px solid #5b2b85;
+
+border-radius:22px;
+
+text-align:center;
+
+overflow:hidden;
+
+cursor:pointer;
+
+}
+
+
+
+.package::before{
+
+content:"";
+
+position:absolute;
+
+top:-50%;
+left:-50%;
+
+width:200%;
+height:200%;
+
+background:
+linear-gradient(
+transparent,
+rgba(0,220,255,.15),
+transparent
+);
+
+transform:rotate(45deg);
+
+animation:shine 4s infinite;
+
+}
+
+
+
+@keyframes shine{
+
+0%{
+
+transform:translateX(-100%) rotate(45deg);
+
+}
+
+
+50%{
+
+transform:translateX(100%) rotate(45deg);
+
+}
+
+
+100%{
+
+transform:translateX(100%) rotate(45deg);
+
+}
+
+}
+
+
+
+.package h2{
+
+position:relative;
+
+color:#00d9ff;
+
+font-size:32px;
+
+margin:15px 0;
+
+}
+
+
+
+.package .price{
+
+position:relative;
+
+font-size:22px;
+
+color:white;
+
+font-weight:bold;
+
+}
+
+
+
+.package:hover{
+
+border-color:#00ffff;
+
+transform:translateY(-5px);
+
+box-shadow:
+
+0 0 30px #00cfff;
+
+}
+
+
+
+/* etiqueta oferta */
+
+.offer{
+
+position:absolute;
+
+top:10px;
+
+left:10px;
+
+font-size:12px;
+
+font-weight:bold;
+
+background:#ff7200;
+
+padding:6px 12px;
+
+border-radius:20px;
+
+}
+
+
+
+/* móvil */
+
+@media(max-width:600px){
+
+.package{
+
+min-height:150px;
+
+}
+
+
+.package h2{
+
+font-size:27px;
+
+}
+
+    }
     }
     }
 </style>
